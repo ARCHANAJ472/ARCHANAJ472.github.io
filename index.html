@@ -323,7 +323,7 @@ footer{text-align:center;padding:24px;color:#555;font-size:13px;border-top:1px s
       <h1 class="glitch" data-text="Hi, I'm Archana J">Hi, I'm <span>Archana J</span></h1>
     </div>
     <div class="role-wrap">
-      I am a&nbsp;<span class="role-text" id="roleText"></span><span class="cursor">|</span>
+      I am a&nbsp;<span class="role-text" id="roleText"></span><span class="cursor"></span>
     </div>
 
     <div class="hero-badges">
@@ -773,10 +773,13 @@ function drawParticles(){
 drawParticles();
 
 // ROTATING ROLES
-const roles = ["Regulatory Control & Operations Intern",
+const roles = [
+"Regulatory Control & Operations Intern",
 "Medical Device Regulatory Enthusiast", 
-"Healthcare Compliance Learner"];
-let ri=0,ci=0,deleting=false;
+"Healthcare Compliance Learner"
+];
+
+let ri=0,ci=0,deleting = false;
 const roleEl = document.getElementById("roleText");
 function typeRole(){
   const current = roles[ri];
@@ -787,7 +790,7 @@ function typeRole(){
     roleEl.textContent = current.slice(0,--ci);
     if(ci===0){ deleting=false; ri=(ri+1)%roles.length; }
   }
-  setTimeout(typeRole, deleting?40:80);
+  setTimeout(typeRole, deleting?30:70);
 }
 setTimeout(typeRole, 1000);
 
